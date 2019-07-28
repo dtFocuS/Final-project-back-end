@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
       resources :activities, only: [:create, :index, :show]
       resources :participations, only: [:create, :index, :show]
+      #get '/myParticipations', to: 'participations#my_participations'
+      get 'my_joined_activities/:current_user_id', to: 'activities#my_joined_activities'
+      get 'others_activities/:current_user_id', to: 'activities#others_activities'
     end
   end
 end
