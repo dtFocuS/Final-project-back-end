@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Participation.destroy_all;
+#Participation.destroy_all;
 # Activity.destroy_all;
 # User.destroy_all;
 
@@ -25,7 +25,7 @@
 # User.create({first_name: 'Gregory', last_name: 'Morgan', username: 'GMoney', password: "123", 
 #     image: 'https://images.pexels.com/photos/2220336/pexels-photo-2220336.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', verified: false})
 
-Activity.create({name: "picnic", description: "come join my picnic", user_id: 6, latitude: 37.808674, longitude: -122.409821})
-Activity.create({name: "beach", description: "welcome to my beach party", user_id: 7, latitude: 37.793342, longitude: -122.396492})
-Activity.create({name: "volleyball", description: "play volleyball together", user_id: 8, latitude: 37.768921, longitude: -122.395119})
-Activity.create({name: "bar", description: "happy hour come join", user_id: 9, latitude: 37.791308, longitude: -122.429092})
+# Activity.create({name: "picnic", description: "come join my picnic", user_id: 6, latitude: 37.808674, longitude: -122.409821})
+# Activity.create({name: "beach", description: "welcome to my beach party", user_id: 7, latitude: 37.793342, longitude: -122.396492})
+# Activity.create({name: "volleyball", description: "play volleyball together", user_id: 8, latitude: 37.768921, longitude: -122.395119})
+# Activity.create({name: "bar", description: "happy hour come join", user_id: 9, latitude: 37.791308, longitude: -122.429092})
