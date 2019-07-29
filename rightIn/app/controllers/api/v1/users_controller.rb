@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index, :show, :profile]
+    skip_before_action :authorized, only: [:create, :index, :show, :profile, :get_participants]
 
     def index
         users = User.all
@@ -23,6 +23,11 @@ class Api::V1::UsersController < ApplicationController
         else
             render json: { error: 'failed to create user' }, status: :not_acceptable
         end
+    end
+
+    def get_participants
+        participants_id = User.get_participants(params[:activity_id])
+        render json: User.where(id: participants_id)
     end
  
     private

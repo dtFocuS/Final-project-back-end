@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'my_joined_activities/:current_user_id', to: 'activities#my_joined_activities'
       get 'others_activities/:current_user_id', to: 'activities#others_activities'
       get 'other_not_joined_activities/:current_user_id', to: 'activities#other_not_joined_activities'
+      get 'participants/:activity_id', to: 'users#get_participants'
     end
   end
 end
