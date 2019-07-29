@@ -21,17 +21,13 @@ class Api::V1::ParticipationsController < ApplicationController
         end
     end
 
-    def my_joined_activities
-        #byebug
-        my_participations = self.my_participations(params[:id])
-        #byebug
-        my_participating_activity_ids = my_participations.collect {|participation| participation.activity_id}
-        #byebug
-        my_participated_activities = Activity.where(activity_id: my_participating_activity_ids)
-        #byebug
-        render json: my_participated_activities
+    # def my_joined_activities
+    #     my_participations = self.my_participations(params[:id])
+    #     my_participating_activity_ids = my_participations.collect {|participation| participation.activity_id}
+    #     my_participated_activities = Activity.where(activity_id: my_participating_activity_ids)
+    #     render json: my_participated_activities
 
-    end
+    # end
  
     private
  

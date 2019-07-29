@@ -1,5 +1,5 @@
 class Api::V1::ActivitiesController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index, :show, :my_joined_activities, :others_activities]
+    skip_before_action :authorized, only: [:create, :index, :show, :my_joined_activities, :others_activities, :other_not_joined_activities]
 
 
     def index
@@ -31,6 +31,11 @@ class Api::V1::ActivitiesController < ApplicationController
         others_activitiy_ids = Activity.others_activitiy_ids(params[:current_user_id])
         others_activities = Activity.where(id: others_activitiy_ids)
         render json: others_activities
+    end
+
+    def other_not_joined_activities
+        
+        render json: Activity.other_not_joined_activities(params[:current_user_id])
     end
  
     private
