@@ -1,5 +1,5 @@
 class Api::V1::ActivitiesController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index, :show, :my_joined_activities, :others_activities, :other_not_joined_activities]
+    skip_before_action :authorized, only: [:create, :index, :show, :my_joined_activities, :others_activities, :other_not_joined_activities, :update]
 
 
     def index
@@ -20,6 +20,16 @@ class Api::V1::ActivitiesController < ApplicationController
             render json: { error: 'failed to create activity' }, status: :not_acceptable
         end
     end
+
+    def update
+        activity = Activity.find_by(id: params[:id])
+        if activity.update(activity_params)
+            render json: { activity: ActivitySerializer.new(activity) }, status: :created
+        else
+            render json: { error: 'failed to edit activity' }, status: :not_acceptable
+        end
+    end
+
 
     def my_joined_activities
         my_activity_ids = Participation.my_participating_activity_ids(params[:current_user_id])

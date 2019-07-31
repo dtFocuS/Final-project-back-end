@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :index, :show]
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
-      resources :activities, only: [:create, :index, :show]
+      resources :activities, only: [:create, :index, :show, :update]
       resources :participations, only: [:create, :index, :show]
       #get '/myParticipations', to: 'participations#my_participations'
       get 'my_joined_activities/:current_user_id', to: 'activities#my_joined_activities'
