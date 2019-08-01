@@ -1,5 +1,5 @@
 class Api::V1::ActivitiesController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index, :show, :my_joined_activities, :others_activities, :other_not_joined_activities, :update]
+    skip_before_action :authorized, only: [:create, :index, :show, :my_joined_activities, :others_activities, :other_not_joined_activities, :update, :destroy]
 
 
     def index
@@ -30,6 +30,17 @@ class Api::V1::ActivitiesController < ApplicationController
         end
     end
 
+    def destroy
+        activity = Activity.find_by(id: params[:id])
+        #byebug
+        if activity.destroy
+            render json: ActivitySerializer.new(activity)
+        else
+            #byebug
+            puts error.full_message
+        end
+    end
+
 
     def my_joined_activities
         my_activity_ids = Participation.my_participating_activity_ids(params[:current_user_id])
@@ -51,6 +62,6 @@ class Api::V1::ActivitiesController < ApplicationController
     private
  
     def activity_params
-        params.require(:activity).permit(:name, :description, :user_id, :latitude, :longitude)
+        params.require(:activity).permit(:name, :description, :user_id, :latitude, :longitude, :address)
     end
 end
