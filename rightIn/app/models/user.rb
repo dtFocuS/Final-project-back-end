@@ -2,7 +2,7 @@ class User < ApplicationRecord
     has_secure_password
     validates :username, uniqueness: { case_sensitive: false }
     has_many :activities, dependent: :destroy
-    has_many :participations
+    has_many :participations, dependent: :destroy
     accepts_nested_attributes_for :activities
 
     def self.get_participants(activity_id)
