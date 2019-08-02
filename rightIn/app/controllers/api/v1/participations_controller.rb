@@ -1,5 +1,5 @@
 class Api::V1::ParticipationsController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index, :show, :my_participations, :my_joined_activities]
+    skip_before_action :authorized, only: [:create, :index, :show, :my_participations, :participation, :destroy]
 
     def index
         participations = Participation.all 
@@ -18,6 +18,18 @@ class Api::V1::ParticipationsController < ApplicationController
             render json: { participation: ParticipationSerializer.new(participation) }, status: :created
         else
             render json: { error: 'failed to create participation' }, status: :not_acceptable
+        end
+    end
+
+    def destroy
+        
+        participation = Participation.find_by(id: params[:id])
+        
+        if participation.destroy
+            render json: ParticipationSerializer.new(participation)
+        else
+            #byebug
+            puts error.full_message
         end
     end
 
