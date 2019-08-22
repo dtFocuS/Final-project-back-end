@@ -34,7 +34,7 @@ class Api::V1::ActivitiesController < ApplicationController
         activity = Activity.find_by(id: params[:id])
         #byebug
         if activity.destroy
-            render json: ActivitySerializer.new(activity)
+            render json: { activity: ActivitySerializer.new(activity) }
         else
             #byebug
             puts error.full_message
