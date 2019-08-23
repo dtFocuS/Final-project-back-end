@@ -24,9 +24,9 @@ class Api::V1::ParticipationsController < ApplicationController
     def destroy
         
         participation = Participation.find_by(id: params[:id])
-        
+        #participation.destroy
         if participation.destroy
-            render json: ParticipationSerializer.new(participation)
+            render json: {participation: ParticipationSerializer.new(participation) }
         else
             #byebug
             puts error.full_message
