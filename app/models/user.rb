@@ -1,6 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
-    validates :username, uniqueness: { case_sensitive: false }
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    validates :email, presence: true
+    validates :username, uniqueness: { case_sensitive: false }, presence: true
     has_many :activities, dependent: :destroy
     has_many :participations, dependent: :destroy
     accepts_nested_attributes_for :activities
