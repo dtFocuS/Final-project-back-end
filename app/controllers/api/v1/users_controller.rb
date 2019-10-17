@@ -25,10 +25,10 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
-    def get_participants
-        participants_id = User.get_participants(params[:activity_id])
-        render json: User.where(id: participants_id)
-    end
+    # def get_participants
+    #     participants_id = User.get_participants(params[:activity_id])
+    #     render json: User.where(id: participants_id)
+    # end
  
     private
  

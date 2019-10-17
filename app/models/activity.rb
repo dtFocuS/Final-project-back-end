@@ -26,4 +26,8 @@ class Activity < ApplicationRecord
         end
         temp
     end
+
+    def return_participants(activity_id)
+        Activity.find(activity_id).participations.map{|participation| participation.user_id.to_i}
+    end
 end
