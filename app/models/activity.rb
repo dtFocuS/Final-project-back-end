@@ -1,6 +1,9 @@
 class Activity < ApplicationRecord
     belongs_to :user
     has_many :participations, dependent: :destroy
+    validates :name, presence: true
+    validates :description, presence: true
+    
 
 
     def self.others_activitiy_ids(current_user_id)
@@ -27,7 +30,7 @@ class Activity < ApplicationRecord
         temp
     end
 
-    def return_participants(activity_id)
-        Activity.find(activity_id).participations.map{|participation| participation.user_id.to_i}
-    end
+    # def return_participants(activity_id)
+    #     Activity.find(activity_id).participations.map{|participation| participation.user_id.to_i}
+    # end
 end

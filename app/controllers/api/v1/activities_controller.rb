@@ -42,7 +42,8 @@ class Api::V1::ActivitiesController < ApplicationController
     end
 
     def get_participants
-        participants_id = Activity.return_participants(params[:activity_id])
+        # participants_id = Activity.return_participants(params[:activity_id])
+        participants_id = Activity.find(params[:activity_id]).participations.map{|participation| participation.user_id.to_i}
         render json: User.where(id: participants_id)
     end
 
