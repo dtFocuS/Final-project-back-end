@@ -54,7 +54,7 @@ class Api::V1::ActivitiesController < ApplicationController
     end
 
     def others_activities
-        others_activitiy_ids = Activity.others_activitiy_ids(params[:current_user_id])
+        others_activitiy_ids = Activity.others_activity_ids(params[:current_user_id])
         others_activities = Activity.where(id: others_activitiy_ids)
         render json: others_activities
     end
