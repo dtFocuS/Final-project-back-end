@@ -27,6 +27,12 @@ RSpec.describe User, type: :model do
       user = User.new(first_name: 'first', last_name: 'last', username: 'username', password: '123').save
       expect(user).to eq(false)
     end
+
+    it 'should be valid user' do
+      user = User.new(first_name: 'first', last_name: 'last', username: 'username', password: '123', email: 'sample@example.com').save
+      expect(user).to eq(true)
+    end
+
   end
 
   # context 'retrieving participants of each activity' do
