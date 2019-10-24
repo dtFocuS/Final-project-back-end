@@ -4,6 +4,14 @@ require 'json'
 RSpec.describe "Activities", type: :request do
 
   let (:user) { User.create(first_name: 'first', last_name: 'last', username: 'username', password: '123', email: 'sample@example.com') }
+  headers = { "Content-Type": "application/json" }
+  # activity_params = { activity: {
+  #       name: 'Basketball',
+  #       description: 'Basketball 3v3',
+  #       latitude: 47.7170,
+  #       longitude: -122.3015,
+  #       address: 'b coffee'
+  # }}
 
   describe "GET activities#index" do
     it "should get index" do
@@ -15,7 +23,7 @@ RSpec.describe "Activities", type: :request do
 
   describe "POST activities#create" do
     # let (:user) { User.create(first_name: 'first', last_name: 'last', username: 'username', password: '123', email: 'sample@example.com') }
-    headers = { "Content-Type": "application/json" }
+    
 
     it "should be able to create with valid attributes" do
       activity_params = { activity: {
@@ -26,20 +34,19 @@ RSpec.describe "Activities", type: :request do
         longitude: -122.3015,
         address: 'b coffee'
       }}
-      # headers = { "Content-Type": "application/json" }
       post '/api/v1/activities', :params => activity_params.to_json, :headers => headers
       expect(response).to have_http_status(201)
     end
 
     it 'should not be able to create without name' do
       activity_params = { activity: {
+        name: '',
         description: 'Basketball 3v3',
         user_id: user.id,
         latitude: 47.7170,
         longitude: -122.3015,
         address: 'b coffee'
       }}
-      # headers = { "Content-Type": "application/json" }
       post '/api/v1/activities', :params => activity_params.to_json, :headers => headers
       expect(response).to have_http_status(406)
     end
@@ -55,6 +62,7 @@ RSpec.describe "Activities", type: :request do
         longitude: -122.3015,
         address: 'b coffee'
       }}
+      
       new_activity_params = { activity: {
         name: 'Basketball',
         description: 'Change from 3v3 to 5v5',
@@ -64,11 +72,25 @@ RSpec.describe "Activities", type: :request do
         address: 'b coffee'
       }}
       activity = Activity.create(activity_params[:activity])
-      put "/api/v1/activities/#{activity.id}", :params => new_activity_params, :headers => headers
+      put "/api/v1/activities/#{activity.id}", :params => new_activity_params.to_json, :headers => headers
       json = JSON.parse(response.body)
       expect(json["activity"]).to include("description" => "Change from 3v3 to 5v5")
     end
+  end
 
-
+  describe 'DELETE activities#destroy' do
+    it 'should delete the activity' do
+      activity_params = { activity: {
+        name: 'Basketball',
+        description: 'Basketball 3v3',
+        user_id: user.id,
+        latitude: 47.7170,
+        longitude: -122.3015,
+        address: 'b coffee'
+      }}
+      activity = Activity.create(activity_params[:activity])
+      delete "/api/v1/activities/#{activity.id}"
+      expect(response).to have_http_status(200)
+    end
   end
 end
