@@ -59,10 +59,7 @@ RSpec.describe Activity, type: :model do
         expect(Activity.other_not_joined_activities(other_user.id).length).to eq(1)
       end
 
-
     end
   end
-
-  
   
 end
