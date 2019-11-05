@@ -5,6 +5,7 @@ RSpec.describe "Participations", type: :request do
 
   headers = { "Content-Type": "application/json" }
   let (:user) { User.create(first_name: 'first', last_name: 'last', username: 'username', password: '123', email: 'sample@example.com') }
+  let (:other_user) { User.create(first_name: 'John', last_name: 'Doe', username: 'JDoe', password: '123', email: 'sample@example.com') }
 
   describe "GET participations#index" do
     it "should get index" do
@@ -17,7 +18,7 @@ RSpec.describe "Participations", type: :request do
     it "should be able to create with valid user and activity" do
       activity = Activity.create(name: 'Basketball', description: 'Basketball 3v3', user_id: user.id, latitude: 47.7170, longitude: -122.3015, address: 'b coffee')
       participation_params = { participation: {
-        user_id: user.id,
+        user_id: other_user.id,
         activity_id: activity.id
       }}
 
@@ -28,7 +29,7 @@ RSpec.describe "Participations", type: :request do
     it "should not create with invalid user id" do
       activity = Activity.create(name: 'Basketball', description: 'Basketball 3v3', user_id: user.id, latitude: 47.7170, longitude: -122.3015, address: 'b coffee')
       participation_params = { participation: {
-        user_id: user.id + 1,
+        user_id: User.last.id + 1,
         activity_id: activity.id
       }}
       post '/api/v1/participations', :params => participation_params.to_json, :headers => headers
@@ -37,6 +38,8 @@ RSpec.describe "Participations", type: :request do
   end
 
   describe "DELETE participations#destroy" do
+    it "should delete the participation successfully" do
 
+    end
   end
 end
