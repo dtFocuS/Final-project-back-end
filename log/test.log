@@ -20050,3 +20050,591 @@ Processing by Api::V1::UsersController#create as HTML
 [active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
 Completed 406 Not Acceptable in 7ms (Views: 0.4ms | ActiveRecord: 1.2ms)
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$O5DJLV/JxJ.0GuJJNWWLd.4ygt7THN0PSYkyI7vB//If4znBYIN9u"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:12.617951"], ["updated_at", "2019-11-05 00:20:12.617951"], ["first_name", "first"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1424], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$O9dNGFp3HAfBPNLdXnuGau.1hw.KaPPuldgubYBsmZnXZ1bKBdYpG"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:12.989033"], ["updated_at", "2019-11-05 00:20:12.989033"], ["first_name", "first"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1425], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$6ddc4ABcdruJCs1GhRX0.OTX8.8TYrjU05MMv4rfYLkJsvK255fA."], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:12.996723"], ["updated_at", "2019-11-05 00:20:12.996723"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1426], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1426], ["created_at", "2019-11-05 00:20:12.999566"], ["updated_at", "2019-11-05 00:20:12.999566"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$jkYMrladPmbl7Mw9D/ZSK.Jsyp02INmLspDl/SyDMm.bbv2uvIXLu"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.006087"], ["updated_at", "2019-11-05 00:20:13.006087"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1427], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1427], ["created_at", "2019-11-05 00:20:13.009090"], ["updated_at", "2019-11-05 00:20:13.009090"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$UHyIY3lvnp0T8qbviroxJeDqjavBxKjC7SLKbMy9dKlplo8dqp3zi"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.016421"], ["updated_at", "2019-11-05 00:20:13.016421"], ["first_name", "first"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1428], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1428], ["created_at", "2019-11-05 00:20:13.019796"], ["updated_at", "2019-11-05 00:20:13.019796"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "johnDoe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Doe"], ["username", "johnDoe"], ["password_digest", "$2a$04$MgekpOa4S/nqeYwLmMbpw.f6ZG4P3yupTfLEb0iA/Kg540DVUEr6i"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.025314"], ["updated_at", "2019-11-05 00:20:13.025314"], ["first_name", "John"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$4bXvWzLnODKsl9otRIuK6.woVDnEkPQuhNw/Om5U38okoJYf8QDpq"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.034420"], ["updated_at", "2019-11-05 00:20:13.034420"], ["first_name", "first"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1430], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1430], ["created_at", "2019-11-05 00:20:13.039443"], ["updated_at", "2019-11-05 00:20:13.039443"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$/7S2bjgqgW/EkyP6Po.my.LECRppXMbPwp5duF6IYK0vTz60/UxGK"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.060296"], ["updated_at", "2019-11-05 00:20:13.060296"], ["first_name", "first"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1431], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1431], ["created_at", "2019-11-05 00:20:13.066426"], ["updated_at", "2019-11-05 00:20:13.066426"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "johnDoe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Doe"], ["username", "johnDoe"], ["password_digest", "$2a$04$MceA9ZXU/hnrulGm6PfcY.N/9hXuNNNNFFlF/oqFBE/gd.hEHIoGa"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.071242"], ["updated_at", "2019-11-05 00:20:13.071242"], ["first_name", "John"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParticipation Load (0.2ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$SmE3TOEUEg5iKOvnNtMc4eBV5dB5IHo0T5UFQcNVzBiK49zftQ50O"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.102701"], ["updated_at", "2019-11-05 00:20:13.102701"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/activities" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$AQsMX9cXTfDOvuY340vBa.NfPtQ1Du4ifjLpMu03LHRb0BbFJp5k2"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.238133"], ["updated_at", "2019-11-05 00:20:13.238133"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/activities" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ActivitiesController#create as HTML
+  Parameters: {"activity"=>{"name"=>"Basketball", "description"=>"Basketball 3v3", "user_id"=>1434, "latitude"=>47.717, "longitude"=>-122.3015, "address"=>"b coffee"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1434], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1434], ["created_at", "2019-11-05 00:20:13.243773"], ["updated_at", "2019-11-05 00:20:13.243773"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers]   [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT "participations".* FROM "participations" WHERE "participations"."activity_id" = $1[0m  [["activity_id", 740]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.04ms)
+Completed 201 Created in 45ms (Views: 37.4ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$6NDzBFydzea6NJGOGDEwD.9LI/JatxErGVdLSqaoqAGSvDxi6xH5y"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.292351"], ["updated_at", "2019-11-05 00:20:13.292351"], ["first_name", "first"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/activities" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ActivitiesController#create as HTML
+  Parameters: {"activity"=>{"name"=>"", "description"=>"Basketball 3v3", "user_id"=>1435, "latitude"=>47.717, "longitude"=>-122.3015, "address"=>"b coffee"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1435], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 406 Not Acceptable in 5ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$.TsMko3BJ1m7NgYLMB7Si.xtZQOMV6fZ2GtrEVnp7WrULUoqdkPxm"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.304443"], ["updated_at", "2019-11-05 00:20:13.304443"], ["first_name", "first"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1436], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1436], ["created_at", "2019-11-05 00:20:13.307357"], ["updated_at", "2019-11-05 00:20:13.307357"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/activities/741" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ActivitiesController#update as HTML
+  Parameters: {"activity"=>{"name"=>"Basketball", "description"=>"Change from 3v3 to 5v5", "user_id"=>1436, "latitude"=>47.717, "longitude"=>-122.3015, "address"=>"b coffee"}, "id"=>"741"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 741], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1436], ["LIMIT", 1]]
+  [1m[36mActivity Update (0.4ms)[0m  [1m[33mUPDATE "activities" SET "description" = $1, "updated_at" = $2 WHERE "activities"."id" = $3[0m  [["description", "Change from 3v3 to 5v5"], ["updated_at", "2019-11-05 00:20:13.313757"], ["id", 741]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers]   [1m[36mParticipation Load (0.2ms)[0m  [1m[34mSELECT "participations".* FROM "participations" WHERE "participations"."activity_id" = $1[0m  [["activity_id", 741]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.94ms)
+Completed 201 Created in 6ms (Views: 1.1ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$xCP1P7GZlQWva.nGfkp.Uu.0HRp8jo13GPl4Ewtqtzdw3bPqCBgs."], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.323146"], ["updated_at", "2019-11-05 00:20:13.323146"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1437], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1437], ["created_at", "2019-11-05 00:20:13.326287"], ["updated_at", "2019-11-05 00:20:13.326287"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/activities/742" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ActivitiesController#destroy as HTML
+  Parameters: {"id"=>"742"}
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 742], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParticipation Load (0.2ms)[0m  [1m[34mSELECT "participations".* FROM "participations" WHERE "participations"."activity_id" = $1[0m  [["activity_id", 742]]
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 742]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Elbert Langosh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Efg"], ["username", "Elbert Langosh"], ["password_digest", "$2a$04$qmX7jQayLHsHs/MB4wvEMu1Gpw6jYEeTgQiyqVpTJ91x7yu10wa/q"], ["email", "dannychamp@example.com"], ["created_at", "2019-11-05 00:20:13.341029"], ["updated_at", "2019-11-05 00:20:13.341029"], ["first_name", "Abc"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::AuthController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"Abc", "last_name"=>"Efg", "username"=>"Elbert Langosh", "password"=>"[FILTERED]", "email"=>"dannychamp@example.com"}, "auth"=>{"user"=>{"first_name"=>"Abc", "last_name"=>"Efg", "username"=>"Elbert Langosh", "password"=>"[FILTERED]", "email"=>"dannychamp@example.com"}}}
+Unpermitted parameters: :first_name, :last_name, :email
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Elbert Langosh"], ["LIMIT", 1]]
+Unpermitted parameters: :first_name, :last_name, :email
+[active_model_serializers]   [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1438]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.79ms)
+Completed 202 Accepted in 10ms (Views: 4.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/participations" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ParticipationsController#index as HTML
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$WAL1S4xtncg1hcxfkopupum5D3szEyEJbE5YJvo8K3O1u5K//.R/u"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.374601"], ["updated_at", "2019-11-05 00:20:13.374601"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1439], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1439], ["created_at", "2019-11-05 00:20:13.377174"], ["updated_at", "2019-11-05 00:20:13.377174"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/participations" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ParticipationsController#create as HTML
+  Parameters: {"participation"=>{"user_id"=>1439, "activity_id"=>743}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 743], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1439], ["LIMIT", 1]]
+  [1m[36mParticipation Create (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["activity_id", 743], ["user_id", 1439], ["created_at", "2019-11-05 00:20:13.392725"], ["updated_at", "2019-11-05 00:20:13.392725"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 201 Created in 14ms (Views: 0.6ms | ActiveRecord: 4.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$8IpWbj/hq0/YkdPEkVpfBu9as.8frotFStnDdr/pG949ITodErhT6"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:13.401220"], ["updated_at", "2019-11-05 00:20:13.401220"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1440], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1440], ["created_at", "2019-11-05 00:20:13.403917"], ["updated_at", "2019-11-05 00:20:13.403917"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/participations" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::ParticipationsController#create as HTML
+  Parameters: {"participation"=>{"user_id"=>1441, "activity_id"=>744}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 744], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1441], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 406 Not Acceptable in 5ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/users" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1195]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+[active_model_serializers]   [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1210]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.6ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"Danny", "last_name"=>"Tseng", "username"=>"Jone Lockman Jr.", "password"=>"[FILTERED]", "email"=>"dannychamp@example.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jone Lockman Jr."], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Tseng"], ["username", "Jone Lockman Jr."], ["password_digest", "$2a$04$vid2xue9K55sGA9gicpp2uUH6i5./TJsom5Uww4DpjVypK5DJi72."], ["email", "dannychamp@example.com"], ["created_at", "2019-11-05 00:20:13.444157"], ["updated_at", "2019-11-05 00:20:13.444157"], ["first_name", "Danny"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Jone Lockman Jr."], ["id", 1441], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1441]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.02ms)
+Completed 201 Created in 9ms (Views: 2.0ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Katlyn Fisher MD"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Tseng"], ["username", "Katlyn Fisher MD"], ["password_digest", "$2a$04$7U.9ohhiwdnoL7196JG7UeO1LWZRxH6h0M5UuOLU697elP.jPFrHm"], ["email", "dannychamp@example.com"], ["created_at", "2019-11-05 00:20:13.454892"], ["updated_at", "2019-11-05 00:20:13.454892"], ["first_name", "Danny"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2019-11-04 16:20:13 -0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"Tony", "last_name"=>"Stark", "username"=>"Katlyn Fisher MD", "password"=>"[FILTERED]", "email"=>"dchamp@example.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Katlyn Fisher MD"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Katlyn Fisher MD"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 406 Not Acceptable in 6ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$UPpkLKMSmHjChu2hJrB8.ufDaJl4lBsX5nkuXOG4H7ejrZvoNAfB2"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.153347"], ["updated_at", "2019-11-05 00:20:34.153347"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1443], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$2QC4vYF9Bq1Kg.Rjbc8MH.hpQ4BQOGwKPXdEvJsa/3vsJYy3noV3G"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.300017"], ["updated_at", "2019-11-05 00:20:34.300017"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1444], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$ta99IXRg25S/RyaSUhw79.MBTL8QdpCE6OcoaprLSjJeyFCm/bwru"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.306910"], ["updated_at", "2019-11-05 00:20:34.306910"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1445], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1445], ["created_at", "2019-11-05 00:20:34.310076"], ["updated_at", "2019-11-05 00:20:34.310076"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$qa/RlXgp7aSXMr4MZC7BqOrc3Rk.jDmiTgERIECHckylCqAC6ZxJW"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.316151"], ["updated_at", "2019-11-05 00:20:34.316151"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1446], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1446], ["created_at", "2019-11-05 00:20:34.318836"], ["updated_at", "2019-11-05 00:20:34.318836"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$FlSSxzosjNjKcc92yfhxoeEbo3okjLDFDDCD4R0fUmQIYtb34lvjC"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.325107"], ["updated_at", "2019-11-05 00:20:34.325107"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1447], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1447], ["created_at", "2019-11-05 00:20:34.327942"], ["updated_at", "2019-11-05 00:20:34.327942"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "johnDoe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Doe"], ["username", "johnDoe"], ["password_digest", "$2a$04$AwtpvQFHoHJ6rB5lMy4zlucJHy9CFyb3AZcInap026I2ON6UXU3sO"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.332402"], ["updated_at", "2019-11-05 00:20:34.332402"], ["first_name", "John"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$K5sdAsqs83k3RvrHBboSUeNxjUvdPMXyDTAdR7G2ocNgnN28lT5yq"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.339790"], ["updated_at", "2019-11-05 00:20:34.339790"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1449], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1449], ["created_at", "2019-11-05 00:20:34.342912"], ["updated_at", "2019-11-05 00:20:34.342912"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$/kZYgSXgplAyORzRRWaQjO3Jhb/Z08/6Q/RR7F.QMt8YaW1NjvDgi"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.354254"], ["updated_at", "2019-11-05 00:20:34.354254"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1450], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test1"], ["description", "description1"], ["user_id", 1450], ["created_at", "2019-11-05 00:20:34.356789"], ["updated_at", "2019-11-05 00:20:34.356789"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "johnDoe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Doe"], ["username", "johnDoe"], ["password_digest", "$2a$04$9WKfvCUrdjl8Stu7RX6fYug29TSv0uzZ68Hq/1mq9A.fmqMwl0hJ2"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.360865"], ["updated_at", "2019-11-05 00:20:34.360865"], ["first_name", "John"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParticipation Load (0.2ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$KLg2cXt0XfcnazGMaYtv2ughh.HJS/KmWPQIjlq1.qVYHcj7ZeLxm"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.390278"], ["updated_at", "2019-11-05 00:20:34.390278"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/activities" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$L4nDqumFeNd0ZL5l97YwUuymvRYhkzwppkNcg1CMaPEaSIwHQELEi"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.514301"], ["updated_at", "2019-11-05 00:20:34.514301"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/activities" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ActivitiesController#create as HTML
+  Parameters: {"activity"=>{"name"=>"Basketball", "description"=>"Basketball 3v3", "user_id"=>1453, "latitude"=>47.717, "longitude"=>-122.3015, "address"=>"b coffee"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1453], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1453], ["created_at", "2019-11-05 00:20:34.519943"], ["updated_at", "2019-11-05 00:20:34.519943"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers]   [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT "participations".* FROM "participations" WHERE "participations"."activity_id" = $1[0m  [["activity_id", 750]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (25.3ms)
+Completed 201 Created in 42ms (Views: 34.6ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$9q8hoDrJ0djC0fO.3r0yZ.QWURfDsvF1Td.y.sMxj97USxx6fAYO."], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.564764"], ["updated_at", "2019-11-05 00:20:34.564764"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/activities" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ActivitiesController#create as HTML
+  Parameters: {"activity"=>{"name"=>"", "description"=>"Basketball 3v3", "user_id"=>1454, "latitude"=>47.717, "longitude"=>-122.3015, "address"=>"b coffee"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1454], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 406 Not Acceptable in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$jaZ3ip5eb4YUe/R6P2hlfOLYAyS7tnMQkK9NfrEcEAQsnBUbwNNhG"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.575533"], ["updated_at", "2019-11-05 00:20:34.575533"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1455], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1455], ["created_at", "2019-11-05 00:20:34.578222"], ["updated_at", "2019-11-05 00:20:34.578222"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/activities/751" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ActivitiesController#update as HTML
+  Parameters: {"activity"=>{"name"=>"Basketball", "description"=>"Change from 3v3 to 5v5", "user_id"=>1455, "latitude"=>47.717, "longitude"=>-122.3015, "address"=>"b coffee"}, "id"=>"751"}
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 751], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1455], ["LIMIT", 1]]
+  [1m[36mActivity Update (0.4ms)[0m  [1m[33mUPDATE "activities" SET "description" = $1, "updated_at" = $2 WHERE "activities"."id" = $3[0m  [["description", "Change from 3v3 to 5v5"], ["updated_at", "2019-11-05 00:20:34.583784"], ["id", 751]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers]   [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT "participations".* FROM "participations" WHERE "participations"."activity_id" = $1[0m  [["activity_id", 751]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.05ms)
+Completed 201 Created in 6ms (Views: 1.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$pEcOKziIW2ZPPqg5QSxty.KB0lIAzAprWXh2UT4jZYEAR1a3Hj8k6"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.594303"], ["updated_at", "2019-11-05 00:20:34.594303"], ["first_name", "first"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1456], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1456], ["created_at", "2019-11-05 00:20:34.597938"], ["updated_at", "2019-11-05 00:20:34.597938"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/activities/752" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ActivitiesController#destroy as HTML
+  Parameters: {"id"=>"752"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 752], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParticipation Load (0.2ms)[0m  [1m[34mSELECT "participations".* FROM "participations" WHERE "participations"."activity_id" = $1[0m  [["activity_id", 752]]
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 752]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Tobi Kub"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Efg"], ["username", "Tobi Kub"], ["password_digest", "$2a$04$AWJl1goPyXiJHvZcweLDee9VBhkfgyKl2iC.JrgD619Mzr/CyL5wi"], ["email", "dannychamp@example.com"], ["created_at", "2019-11-05 00:20:34.614345"], ["updated_at", "2019-11-05 00:20:34.614345"], ["first_name", "Abc"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::AuthController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"Abc", "last_name"=>"Efg", "username"=>"Tobi Kub", "password"=>"[FILTERED]", "email"=>"dannychamp@example.com"}, "auth"=>{"user"=>{"first_name"=>"Abc", "last_name"=>"Efg", "username"=>"Tobi Kub", "password"=>"[FILTERED]", "email"=>"dannychamp@example.com"}}}
+Unpermitted parameters: :first_name, :last_name, :email
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tobi Kub"], ["LIMIT", 1]]
+Unpermitted parameters: :first_name, :last_name, :email
+[active_model_serializers]   [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1457]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.22ms)
+Completed 202 Accepted in 10ms (Views: 4.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/participations" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ParticipationsController#index as HTML
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$5U7TR3f4PkzzlYWwNtQVVu7eeAockx8pYJU24AXCR9p5Lbrt8kXY2"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.652798"], ["updated_at", "2019-11-05 00:20:34.652798"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1458], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1458], ["created_at", "2019-11-05 00:20:34.655560"], ["updated_at", "2019-11-05 00:20:34.655560"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/participations" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ParticipationsController#create as HTML
+  Parameters: {"participation"=>{"user_id"=>1458, "activity_id"=>753}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 753], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1458], ["LIMIT", 1]]
+  [1m[36mParticipation Create (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["activity_id", 753], ["user_id", 1458], ["created_at", "2019-11-05 00:20:34.670332"], ["updated_at", "2019-11-05 00:20:34.670332"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 201 Created in 14ms (Views: 0.6ms | ActiveRecord: 4.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "last"], ["username", "username"], ["password_digest", "$2a$04$LnBwoBeIiueo7U8gpFN23OH7ME./NNZXp5HwvocPduC3/E0DnBCOq"], ["email", "sample@example.com"], ["created_at", "2019-11-05 00:20:34.678492"], ["updated_at", "2019-11-05 00:20:34.678492"], ["first_name", "first"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1459], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("name", "description", "user_id", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basketball"], ["description", "Basketball 3v3"], ["user_id", 1459], ["created_at", "2019-11-05 00:20:34.681239"], ["updated_at", "2019-11-05 00:20:34.681239"], ["latitude", 47.717], ["longitude", -122.3015], ["address", "b coffee"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/participations" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::ParticipationsController#create as HTML
+  Parameters: {"participation"=>{"user_id"=>1460, "activity_id"=>754}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 754], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1460], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 406 Not Acceptable in 5ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/users" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1195]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1210]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.02ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.29ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"Danny", "last_name"=>"Tseng", "username"=>"Mr. Laquanda Kreiger", "password"=>"[FILTERED]", "email"=>"dannychamp@example.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Mr. Laquanda Kreiger"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Tseng"], ["username", "Mr. Laquanda Kreiger"], ["password_digest", "$2a$04$TUuNSPYuRxLk73j2TAxE7Oi7q6pvGNPcF1Ih7yx/VmeON/IwWy3Ui"], ["email", "dannychamp@example.com"], ["created_at", "2019-11-05 00:20:34.706427"], ["updated_at", "2019-11-05 00:20:34.706427"], ["first_name", "Danny"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Mr. Laquanda Kreiger"], ["id", 1460], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1[0m  [["user_id", 1460]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.85ms)
+Completed 201 Created in 8ms (Views: 2.0ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Miss Tammy Goodwin"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "username", "password_digest", "email", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["last_name", "Tseng"], ["username", "Miss Tammy Goodwin"], ["password_digest", "$2a$04$4Ff.F2tKG1aO9WX0u1YvjuImpnMBQVv9xRWRA3BU.uzR2qlRLtSzW"], ["email", "dannychamp@example.com"], ["created_at", "2019-11-05 00:20:34.716704"], ["updated_at", "2019-11-05 00:20:34.716704"], ["first_name", "Danny"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2019-11-04 16:20:34 -0800
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"Tony", "last_name"=>"Stark", "username"=>"Miss Tammy Goodwin", "password"=>"[FILTERED]", "email"=>"dchamp@example.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Miss Tammy Goodwin"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Miss Tammy Goodwin"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 406 Not Acceptable in 7ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m

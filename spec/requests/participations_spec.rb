@@ -16,7 +16,6 @@ RSpec.describe "Participations", type: :request do
   describe "POST participations#create" do
     it "should be able to create with valid user and activity" do
       activity = Activity.create(name: 'Basketball', description: 'Basketball 3v3', user_id: user.id, latitude: 47.7170, longitude: -122.3015, address: 'b coffee')
-
       participation_params = { participation: {
         user_id: user.id,
         activity_id: activity.id
@@ -25,6 +24,19 @@ RSpec.describe "Participations", type: :request do
       post '/api/v1/participations', :params => participation_params.to_json, :headers => headers
       expect(response).to have_http_status(201)
     end
+
+    it "should not create with invalid user id" do
+      activity = Activity.create(name: 'Basketball', description: 'Basketball 3v3', user_id: user.id, latitude: 47.7170, longitude: -122.3015, address: 'b coffee')
+      participation_params = { participation: {
+        user_id: user.id + 1,
+        activity_id: activity.id
+      }}
+      post '/api/v1/participations', :params => participation_params.to_json, :headers => headers
+      expect(response).to have_http_status(406)
+    end
+  end
+
+  describe "DELETE participations#destroy" do
 
   end
 end
