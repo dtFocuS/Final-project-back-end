@@ -39,7 +39,10 @@ RSpec.describe "Participations", type: :request do
 
   describe "DELETE participations#destroy" do
     it "should delete the participation successfully" do
-
+      activity = Activity.create(name: 'Basketball', description: 'Basketball 3v3', user_id: user.id, latitude: 47.7170, longitude: -122.3015, address: 'b coffee')
+      participation = Participation.create(user_id: user.id, activity_id: activity.id)
+      delete "/api/v1/participations/#{participation.id}"
+      expect(response).to have_http_status(200)
     end
   end
 end
