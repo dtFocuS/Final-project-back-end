@@ -5,14 +5,7 @@ RSpec.describe "Activities", type: :request do
 
   let (:user) { User.create(first_name: 'first', last_name: 'last', username: 'username', password: '123', email: 'sample@example.com') }
   headers = { "Content-Type": "application/json" }
-  # activity_params = { activity: {
-  #       name: 'Basketball',
-  #       description: 'Basketball 3v3',
-  #       latitude: 47.7170,
-  #       longitude: -122.3015,
-  #       address: 'b coffee'
-  # }}
-
+  
   describe "GET activities#index" do
     it "should get index" do
       get '/api/v1/activities'
@@ -22,9 +15,7 @@ RSpec.describe "Activities", type: :request do
   end
 
   describe "POST activities#create" do
-    # let (:user) { User.create(first_name: 'first', last_name: 'last', username: 'username', password: '123', email: 'sample@example.com') }
     
-
     it "should be able to create with valid attributes" do
       activity_params = { activity: {
         name: 'Basketball',
